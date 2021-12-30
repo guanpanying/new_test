@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>hi guan</p>
+{{ url_str }}<br>
+{{ my_list }}<br>
+{{ my_list.0 }}<br>
+{{ my_dict }}<br>
+{{ my_dict['a'] }}<br>
+<hr>
+<p>{{ [1111,2,3,4] | first }}</p>
+<p>{{ [1,2,3,4] | last }}</p>
+<p>{{ '<em>hello</em>' | safe }}</p>
+<p>{{ 'hello' | capitalize }}</p>
+<p>{{ 'hello world' | title }}</p>
+{% filter upper %}
+aBCDadddddd
+{% endfilter %}
+
+
+{#这是注释#}
+<hr>
+{% for i in my_list %}
+{{ i }}<br>
+{% endfor %}
+
+</body>
+</html>

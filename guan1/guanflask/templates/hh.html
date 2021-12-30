@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <table border="1px">
+        <a href="{{url_for('insert')}}">新增</a>
+
+        {% for s in s_all%}
+        <!--        当前学生有哪些书籍   通过relationship-->
+        {% for b in s.books %}
+        <tr>
+            <td>{{s.name}}</td>
+            <td>{{b.book_name}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.publish}}</td>
+            <td>{{b.price}}</td>
+            <td>{{b.types}}</td>
+            <td>{{b.pages}}</td>
+            <td>{{s.id}}</td>
+            <td>{{b.s_id}}</td>
+            <td><a href="{{url_for('delete',id = b.id)}}">删除</a></td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+
+    </table>
+</form>
+</body>
+</html>
